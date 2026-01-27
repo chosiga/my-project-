@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+h2 {
+    color: #0d6efd;
+}
+
+input {
+    width: 7%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0a58ca;
+}
+
+.link a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Register</h2>
+
+    <input type="text" id="regUser" placeholder="Username">
+    <input type="password" id="regPass" placeholder="Password">
+
+    <button onclick="register()">Register</button>
+
+    <p class="link">
+        <a href="login.html">Back to Login</a>
+    </p>
+</div>
+
+<script>
+    // Register user
+function register() {
+    let username = document.getElementById("regUser").value;
+    let password = document.getElementById("regPass").value;
+
+    if (username === "" || password === "") {
+        alert("Fill in all fields");
+        return;
+    }
+
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    alert("Account created successfully!");
+    window.location.href = "login.html";
+}
+
+// Login user
+function login() {
+    let storedUser = localStorage.getItem("username");
+    let storedPass = localStorage.getItem("password");
+
+    let username = document.getElementById("loginUser").value;
+    let password = document.getElementById("loginPass").value;
+
+    if (username === storedUser && password === storedPass) {
+        alert("Welcome " + username + "!");
+    } else {
+        alert("Invalid username or password");
+    }
+}
+// Forgot password
+</script>
+</body>
+</html>
