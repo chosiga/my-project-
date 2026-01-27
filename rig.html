@@ -27,11 +27,12 @@ h2 {
 }
 
 input {
-    width: 7%;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 button {
@@ -60,7 +61,7 @@ button:hover {
 <div class="login-container">
     <h2>Register</h2>
 
-    <input type="text" id="regUser" placeholder="Username">
+    <input type="text" id="regUser" placeholder="Username"><br> 
     <input type="password" id="regPass" placeholder="Password">
 
     <button onclick="register()">Register</button>
