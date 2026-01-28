@@ -1,109 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0d6efd, #0a58ca);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.login-container {
-    background: white;
-    padding: 30px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    text-align: center;
-}
+        .login-container {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 
-h2 {
-    color: #0d6efd;
-}
+        h2 {
+            color: #0d6efd;
+        }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background: #0d6efd;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        svg {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
 
-button:hover {
-    background: #0a58ca;
-}
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.link a {
-    color: #0d6efd;
-    text-decoration: none;
-}
+        button:hover {
+            background: #0a58ca;
+        }
 
+        .link a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="login-container">
-    <h2>Register</h2>
+    <div class="login-container">
+        <h2>Register</h2>
 
-    <input type="text" id="regUser" placeholder="Username"><br> 
-    <input type="password" id="regPass" placeholder="Password">
+        <input type="text" id="regUser" placeholder="Username"><br>
+        <input type="password" id="regPass" placeholder="Password">
 
-    <button onclick="register()">Register</button>
+        <button onclick="register()">Register</button>
 
-    <p class="link">
-        <a href="login.html">Back to Login</a>
-    </p>
-</div>
+        <p class="link">
+            <a href="login.html">or login with</a><br> <br>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268 268" role="img" aria-labelledby="title-fb">
+                <title id="title-fb">Facebook f logo</title>
+                <!-- rounded square background -->
+                <rect width="268" height="268" rx="36" fill="#1877F2" />
+                <!-- white "f" -->
+                <path fill="#FFFFFF"
+                    d="M183.6 90.1h-20.2c-2.3 0-5 1.2-5 5.3v18h25.2l-3.4 26.4h-21.8V236h-26.2V139.8h-21.8V113h21.8V92c0-21.6 13.2-33.3 32.5-33.3 9.3 0 17.3.7 19.6 1v22.4z" />
+            </svg>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 533.5 544.3" role="img" aria-labelledby="title-google">
+                <title id="title-google">Google G logo</title>
+                <path fill="#4285F4"
+                    d="M533.5 278.4c0-18.2-1.6-36-4.9-53.1H272.1v100.6h146.9c-6.3 33.9-25.7 62.6-54.7 82.3v68.1h88.3c51.7-47.7 80.9-117.9 80.9-198z" />
+                <path fill="#34A853"
+                    d="M272.1 544.3c73.7 0 135.6-24.4 180.8-66.1l-88.3-68.1c-24.5 16.5-56 26.2-92.5 26.2-71 0-131.1-47.9-152.6-112.2H31.4v70.4C76.6 485.4 167.2 544.3 272.1 544.3z" />
+                <path fill="#FBBC05"
+                    d="M119.5 323.1c-10.2-30.7-10.2-64 0-94.7V157.9H31.4C-5.9 221 5.4 334.1 31.4 386.5l88.1-63.4z" />
+                <path fill="#EA4335"
+                    d="M272.1 107.7c39.9 0 75.8 13.7 104.1 40.6l78-78C408 24.6 345.2 0 272.1 0 167.2 0 76.6 58.9 31.4 144.4l88.1 70.4C141 155.6 201.1 107.7 272.1 107.7z" />
+            </svg>
 
-<script>
-    // Register user
-function register() {
-    let username = document.getElementById("regUser").value;
-    let password = document.getElementById("regPass").value;
+        </p>
+    </div>
 
-    if (username === "" || password === "") {
-        alert("Fill in all fields");
-        return;
-    }
+    <script>
+        // Register user
+        function register() {
+            let username = document.getElementById("regUser").value;
+            let password = document.getElementById("regPass").value;
 
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
+            if (username === "" || password === "") {
+                alert("Fill in all fields");
+                return;
+            }
 
-    alert("Account created successfully!");
-    window.location.href = "login.html";
-}
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
 
-// Login user
-function login() {
-    let storedUser = localStorage.getItem("username");
-    let storedPass = localStorage.getItem("password");
+            alert("Account created successfully!");
+            window.location.href = "login.html";
+        }
 
-    let username = document.getElementById("loginUser").value;
-    let password = document.getElementById("loginPass").value;
+        // Login user
+        function login() {
+            let storedUser = localStorage.getItem("username");
+            let storedPass = localStorage.getItem("password");
 
-    if (username === storedUser && password === storedPass) {
-        alert("Welcome " + username + "!");
-    } else {
-        alert("Invalid username or password");
-    }
-}
-// Forgot password
-</script>
+            let username = document.getElementById("loginUser").value;
+            let password = document.getElementById("loginPass").value;
+
+            if (username === storedUser && password === storedPass) {
+                alert("Welcome " + username + "!");
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+
+      </script>
 </body>
+
 </html>
